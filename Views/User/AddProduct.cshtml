@@ -1,0 +1,55 @@
+﻿@{
+    ViewData["Title"] = "Add Product";
+}
+@model CrudProject.Models.ProductViewModel
+
+
+<div class="row" style=" margin-top: 5rem;">
+    <div class="col-md-8 mx-auto rounded border p-3">
+        <h2 class="text-center mb-5">New Prodect</h2>
+        <form asp-action="AddProduct" method="post" enctype="multipart/form-data">
+            <div class="row mb-3">
+                <label class="col-form-label">Name</label>
+                <input type="text" class="form-control" asp-for="PName"/>
+                <span asp-validation-for="PName" class="text-danger"></span>
+            </div>
+
+            <div class="row mb-3">
+                <label class="col-form-label">Description</label>
+                <textarea class="form-control" asp-for="Description"></textarea>
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+
+            <div class="row mb-3">
+                <label class="col-form-label">Email</label>
+                <input type="email" class="form-control" asp-for="Email" placeholder="abc@gmail.com" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+
+            <div class="row mb-3">
+                <label class="col-form-label">Mobile Number</label>
+                <input type="number" class="form-control" asp-for="MobileNumber" placeholder="+91 1234567890" />
+                <span asp-validation-for="MobileNumber" class="text-danger"></span> 
+            </div>
+
+
+            <div class="row mb-3">
+                <label class="col-form-label">Price</label>
+                <input type="number" class="form-control" asp-for="Price" />
+                <span asp-validation-for="Price" class="text-danger"></span>
+            </div>
+
+            <div class="row mb-3">
+                <label class="col-form-label">Image</label>
+                <input type="file" class="form-control" asp-for="PImage" />
+                <span asp-validation-for="PImage" class="text-danger"></span>
+            </div>
+
+            <div class="row">
+                <button type="submit" class="btn btn-primary">Submit</button>
+                <a class="btn btn-outline-primary" asp-controller="User" asp-action="Home" role="button">Cancel</a>
+            </div>
+        </form>
+    </div>
+
+</div>

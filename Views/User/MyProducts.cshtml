@@ -1,0 +1,43 @@
+﻿@model List<CrudProject.Models.Product>
+
+@{
+    ViewData["Title"] = "My Products";
+}
+
+<link href="~/css/ProductShow.css" rel="stylesheet" asp-append-version="true" />
+
+<div class="container" style=" margin-top: 5rem;">
+    <h2 class="text-center my-5">My Products</h2>
+    <div class="row">
+        @foreach (var product in Model)
+        {
+            <div class="col-md-4 mb-4">
+                <div class="card product-card">
+                    
+                    <img src="~/images/@product.ImageFileName" class="card-img-top" alt="Product Image" />
+
+                    
+                    <div class="card-body">
+                       
+                        <h5 class="card-title product-title">@product.PName</h5>
+
+                       
+                        <p class="card-text text-muted">@product.Description</p>
+
+                        
+                        <p class="price">₹ @String.Format("{0:N2}", @product.Price)</p>
+
+                        <p>Mobile No: @product.MobileNumber </p>
+                        <p>Email: @product.Email</p>
+
+                      
+                        <a asp-controller="User" asp-action="EditProduct" asp-route-id="@product.Id" class="btn btn-warning btn-sm">Edit</a>
+                        <a asp-controller="User" asp-action="DeleteProduct" asp-route-id="@product.Id" class="btn btn-danger">Delete</a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+

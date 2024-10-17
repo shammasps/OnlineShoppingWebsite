@@ -1,0 +1,60 @@
+﻿@model CrudProject.Models.User
+@{
+    ViewData["Title"] = "Register Page";
+}
+<head>
+    <link rel="stylesheet" href="~/css/Login.css" asp-append-version="true" />
+</head>
+<section class="gradient-custom">
+    <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+                <div class="card bg-dark text-white" style="border-radius: 1rem;">
+                    <div class="card-body p-5 text-center">
+                        <form asp-action="Register" method="post">
+                            <div class="mb-md-5 mt-md-4 pb-5">
+                                <h2 class="fw-bold mb-2 text-uppercase">Create an account</h2>
+
+                                <div data-mdb-input-init class="form-outline form-white mb-4">
+                                    <input type="text" id="typeEmailX " class="form-control form-control-lg" placeholder="Username" asp-for="UserName" />
+                                    <span asp-validation-for="UserName" class="text-danger"></span>
+                                </div>
+
+                                <div data-mdb-input-init class="form-outline mb-4">
+                                    <input type="email" id="form3Example3cg" class="form-control form-control-lg" placeholder="Your Email" asp-for="Email" />
+                                    <span asp-validation-for="Email" class="text-danger"></span>
+
+                                </div>
+
+                                <div data-mdb-input-init class="form-outline mb-4">
+                                    <input type="password" id="form3Example4cg" class="form-control form-control-lg" placeholder="Password" asp-for="Password" />
+                                    <span asp-validation-for="Password" class="text-danger"></span>
+
+                                </div>
+
+                                <div data-mdb-input-init class="form-outline mb-4">
+                                    <input type="password" id="form3Example4cdg" class="form-control form-control-lg" placeholder="Repeat your password" asp-for="RePassword" />
+                                    <span asp-validation-for="RePassword" class="text-danger"></span>
+
+                                </div>
+
+
+
+                                <button data-mdb-button-init data-mdb-ripple-init class="btn btn-outline-light btn-lg px-5" type="submit">Register</button>
+
+                            </div>
+
+                            <div>
+                                <p class="text-center text-muted mb-0">
+                                    Have already an account?
+                                    <a asp-controller="User" asp-action="Login" class=" text-white-50 fw-bold"><u>Login here</u></a>
+                                </p>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
